@@ -48,7 +48,7 @@
     <div class="window hero-window">
       <div class="window-titlebar">
         <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-        <span class="window-title">francesco@fardita:~</span>
+        <span class="window-title">python3</span>
       </div>
       <div class="window-body">
         <pre class="term-lines" id="termLines" aria-live="polite"></pre>
@@ -104,7 +104,7 @@
 
   <!-- SKILLS -->
   <section class="section skills" id="skills">
-    <h2 class="section-title"><span class="prompt">$</span> cat skills.yaml</h2>
+    <h2 class="section-title"><span class="prompt">&gt;&gt;&gt;</span> print(open("skills.yaml").read())</h2>
     <div class="code-card yaml-card">
       <div class="yaml-grid">
 
@@ -187,7 +187,7 @@ gold.to_parquet(<span class="ss">"analytics/daily_revenue.parquet"</span>)</code
 
   <!-- EXPERIENCE -->
   <section class="section experience" id="experience">
-    <h2 class="section-title"><span class="prompt">$</span> git log --graph --stat experience</h2>
+    <h2 class="section-title"><span class="prompt">&gt;&gt;&gt;</span> subprocess.run(["git", "log", "--graph", "--stat"], check=True)</h2>
 
     <div class="gitlog">
 
@@ -320,7 +320,7 @@ gold.to_parquet(<span class="ss">"analytics/daily_revenue.parquet"</span>)</code
 
   <!-- PROJECTS -->
   <section class="section projects" id="projects">
-    <h2 class="section-title"><span class="prompt">$</span> ls -la ~/projects</h2>
+    <h2 class="section-title"><span class="prompt">&gt;&gt;&gt;</span> os.listdir("~/projects")</h2>
 
     <div class="window">
       <div class="window-titlebar">
@@ -387,7 +387,7 @@ gold.to_parquet(<span class="ss">"analytics/daily_revenue.parquet"</span>)</code
 
   <!-- EDUCATION -->
   <section class="section education" id="education">
-    <h2 class="section-title"><span class="prompt">$</span> cat education.json</h2>
+    <h2 class="section-title"><span class="prompt">&gt;&gt;&gt;</span> json.load(open("education.json"))</h2>
     <div class="code-card json-card">
 <pre><code><span class="p">{</span>
   <span class="k">"degrees"</span><span class="p">:</span> <span class="p">[</span>
@@ -421,7 +421,7 @@ gold.to_parquet(<span class="ss">"analytics/daily_revenue.parquet"</span>)</code
 
   <!-- CONTACT -->
   <section class="section contact" id="contact">
-    <h2 class="section-title"><span class="prompt">$</span> curl -X POST fardita.dev/contact</h2>
+    <h2 class="section-title"><span class="prompt">&gt;&gt;&gt;</span> requests.post("https://fardita.dev/contact").json()</h2>
     <div class="window contact-window">
       <div class="window-titlebar">
         <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
@@ -443,7 +443,7 @@ gold.to_parquet(<span class="ss">"analytics/daily_revenue.parquet"</span>)</code
 
 <footer class="footer">
   <p>
-    <span class="prompt">$</span> echo "built with vanilla HTML/CSS/JS · deployed on GitHub Pages"
+    <span class="prompt">&gt;&gt;&gt;</span> print("built with vanilla HTML/CSS/JS · deployed on GitHub Pages")
   </p>
   <p class="dim">© <span id="year"></span> Francesco Ardita. All rights reserved.</p>
 </footer>

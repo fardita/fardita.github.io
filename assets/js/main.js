@@ -47,20 +47,19 @@
   var neofetchBlock = document.getElementById("neofetchBlock");
   var termFinal = document.getElementById("termFinal");
   var script = [
-    { type: "prompt", text: "spark-shell --conf spark.ui.port=4040" },
-    { type: "out", text: "Welcome to Apache Spark (v3.5.1) / Databricks Runtime" },
-    { type: "out", text: "Using Scala version 2.12.18" },
-    { type: "prompt", text: "spark.version" },
-    { type: "out", text: "res0: String = 3.5.1" },
+    { type: "prompt", text: 'import pandas as pd' },
+    { type: "prompt", text: 'df = pd.read_parquet("career/profile.parquet")' },
+    { type: "out", text: "            name                role" },
+    { type: "out", text: "0  Francesco Ardita   Data Engineer & Analytics" },
     { type: "prompt", text: "neofetch" }
   ];
-  var FINAL_CURSOR = '<span class="prompt-line">francesco@fardita:~$ <span class="caret"></span></span>';
+  var FINAL_CURSOR = '<span class="prompt-line">&gt;&gt;&gt; <span class="caret"></span></span>';
 
   function renderStatic() {
     var html = "";
     script.forEach(function (line) {
       if (line.type === "prompt") {
-        html += '<span class="prompt-line">francesco@fardita:~$ ' + line.text + "</span>\n";
+        html += '<span class="prompt-line">&gt;&gt;&gt; ' + line.text + "</span>\n";
       } else {
         html += '<span class="out-line">' + line.text + "</span>\n";
       }
@@ -92,7 +91,7 @@
     }
 
     var line = script[lineIndex];
-    var prefix = line.type === "prompt" ? "francesco@fardita:~$ " : "";
+    var prefix = line.type === "prompt" ? ">>> " : "";
     var full = prefix + line.text;
     var cls = line.type === "prompt" ? "prompt-line" : "out-line";
 
