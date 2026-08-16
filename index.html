@@ -167,25 +167,21 @@
     </div>
 
     <div class="code-card spark-card" style="margin-top:20px">
-<pre><code><span class="sc"># spark-job.py — bronze → silver → gold</span>
-<span class="sk">from</span> pyspark.sql <span class="sk">import</span> functions <span class="sk">as</span> <span class="sobj">F</span>
+<pre><code><span class="sc"># pipeline.py — bronze → silver → gold (pandas)</span>
+<span class="sk">import</span> pandas <span class="sk">as</span> <span class="sobj">pd</span>
 
-df = (
-  spark.readStream
-       .table(<span class="ss">"raw.events"</span>)
-       .filter(<span class="sobj">F</span>.col(<span class="ss">"event_type"</span>) != <span class="ss">"test"</span>)
-)
+df = <span class="sobj">pd</span>.read_csv(<span class="ss">"raw/events.csv"</span>)
 
-silver = df.withColumn(<span class="ss">"dt"</span>, <span class="sobj">F</span>.to_date(<span class="sobj">F</span>.col(<span class="ss">"ts"</span>))) \
-          .withColumn(<span class="ss">"user_id"</span>, <span class="sobj">F</span>.col(<span class="ss">"user_id"</span>).cast(<span class="sarg">"long"</span>))
+silver = df[df[<span class="ss">"event_type"</span>] != <span class="ss">"test"</span>]
+silver[<span class="ss">"dt"</span>] = <span class="sobj">pd</span>.to_datetime(silver[<span class="ss">"ts"</span>]).dt.date
+silver[<span class="ss">"user_id"</span>] = silver[<span class="ss">"user_id"</span>].astype(<span class="sarg">"int64"</span>)
 
-gold = silver.groupBy(<span class="ss">"dt"</span>, <span class="ss">"region"</span>) \
-             .agg(<span class="sobj">F</span>.sum(<span class="ss">"revenue"</span>).alias(<span class="ss">"total_revenue"</span>),
-                  <span class="sobj">F</span>.countDistinct(<span class="ss">"user_id"</span>).alias(<span class="ss">"active_users"</span>))
+gold = (silver
+        .groupby([<span class="ss">"dt"</span>, <span class="ss">"region"</span>], as_index=<span class="sobj">False</span>)
+        .agg(total_revenue=(<span class="ss">"revenue"</span>, <span class="ss">"sum"</span>),
+             active_users=(<span class="ss">"user_id"</span>, <span class="ss">"nunique"</span>)))
 
-gold.writeStream.outputMode(<span class="ss">"complete"</span>) \
-    .option(<span class="ss">"checkpointLocation"</span>, <span class="ss">"/dbfs/checkpoints"</span>) \
-    .toTable(<span class="ss">"analytics.daily_revenue"</span>)</code></pre>
+gold.to_parquet(<span class="ss">"analytics/daily_revenue.parquet"</span>)</code></pre>
     </div>
   </section>
 
@@ -381,16 +377,6 @@ gold.writeStream.outputMode(<span class="ss">"complete"</span>) \
               <span class="f-arrow">→</span>
               <span class="f-desc">Simple and user-friendly data manager built with Tkinter and Pandas.</span>
               <span class="tag tag-blue">Python · Desktop</span>
-            </a>
-          </li>
-
-          <li class="file-row">
-            <a href="https://github.com/fardita/PolitOS" target="_blank" rel="noopener">
-              <span class="f-mode">drwxr-xr-x</span>
-              <span class="f-name">PolitOS/</span>
-              <span class="f-arrow">→</span>
-              <span class="f-desc">Political operating system — engagement, territorial campaigns &amp; analytics. Next.js + Supabase.</span>
-              <span class="tag tag-purple">Next.js · Analytics</span>
             </a>
           </li>
 
