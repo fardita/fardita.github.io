@@ -237,7 +237,6 @@ main {
   color: var(--text-bright);
   letter-spacing: -0.5px;
 }
-.hero-copy .accent { color: var(--spark-bright); }
 .role {
   font-size: 15px;
   color: var(--blue);
