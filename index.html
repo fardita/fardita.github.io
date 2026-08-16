@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Francesco Ardita — Data Engineer &amp; Data Analytics Expert</title>
+<meta name="description" content="Francesco Ardita — Data Engineer & Data Analytics Expert. PySpark, Azure, Databricks, Power BI. ETL pipelines, cloud data platforms, ML & BI.">
+
+<meta property="og:title" content="Francesco Ardita — Data Engineer & Data Analytics Expert">
+<meta property="og:description" content="Building ETL pipelines, cloud data platforms and BI dashboards on PySpark, Azure, Databricks and Microsoft Fabric.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230d1117'/%3E%3Ctext x='50' y='68' font-size='54' font-family='monospace' fill='%23e25a1c' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+<div class="scanline" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a href="#top" class="brand">
+    <span class="prompt">~/</span>fardita
+  </a>
+  <nav class="tabs" aria-label="Primary">
+    <a href="#whoami"><span class="tab-dot"></span>whoami</a>
+    <a href="#skills"><span class="tab-dot"></span>skills</a>
+    <a href="#experience"><span class="tab-dot"></span>experience</a>
+    <a href="#projects"><span class="tab-dot"></span>projects</a>
+    <a href="#education"><span class="tab-dot"></span>education</a>
+    <a href="#contact"><span class="tab-dot"></span>contact</a>
+  </nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="whoami">
+    <div class="window hero-window">
+      <div class="window-titlebar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="window-title">francesco@fardita:~</span>
+      </div>
+      <div class="window-body">
+        <pre class="term-lines" id="termLines" aria-live="polite"></pre>
+        <div class="neofetch-block" id="neofetchBlock">
+          <div class="neofetch-body">
+            <div class="ascii-art" aria-hidden="true">
+<pre><span class="aa-dim">// ~/whoami — profile image placeholder</span>
+<span class="aa-dim">// send me a photo &amp; I'll render it here as pixel-art</span>
+
+<span class="aa-main"> ____        ____                   _    </span>
+<span class="aa-main">|  _ \ _   _/ ___| _ __   __ _ _ __| | __</span>
+<span class="aa-main">| |_) | | | \___ \| '_ \ / _` | '__| |/ /</span>
+<span class="aa-main">|  __/| |_| |___) | |_) | (_| | |  |   &lt; </span>
+<span class="aa-main">|_|    \__, |____/| .__/ \__,_|_|  |_|\_\</span>
+<span class="aa-main">       |___/      |_|                    </span></pre>
+            </div>
+            <div class="neofetch-info">
+              <p class="nf-header">francesco<span class="dim">@</span>fardita</p>
+              <p class="nf-sep">─────────────────────</p>
+              <p class="nf-row"><span class="nf-key">Name</span>Francesco Ardita</p>
+              <p class="nf-row"><span class="nf-key">Role</span>Data Engineer &amp; Analytics</p>
+              <p class="nf-row"><span class="nf-key">Host</span>Leonardo</p>
+              <p class="nf-row"><span class="nf-key">Uptime</span>6+ years</p>
+              <p class="nf-row"><span class="nf-key">Location</span>Italy · remote / hybrid</p>
+              <p class="nf-row"><span class="nf-key">Languages</span>Python, SQL, R, Bash, KQL</p>
+              <p class="nf-row"><span class="nf-key">Stack</span>PySpark, Azure, Databricks, Fabric</p>
+              <p class="nf-row"><span class="nf-key">Cert</span>Fabric Analytics Engineer</p>
+              <div class="nf-swatches">
+                <span class="nf-swatch" style="background:var(--spark-bright)"></span>
+                <span class="nf-swatch" style="background:var(--green-bright)"></span>
+                <span class="nf-swatch" style="background:var(--blue)"></span>
+                <span class="nf-swatch" style="background:var(--purple)"></span>
+                <span class="nf-swatch" style="background:var(--orange)"></span>
+                <span class="nf-swatch" style="background:var(--cyan)"></span>
+                <span class="nf-swatch" style="background:var(--red)"></span>
+                <span class="nf-swatch" style="background:var(--yellow)"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <pre class="term-final" id="termFinal"></pre>
+      </div>
+    </div>
+
+    <div class="hero-copy">
+      <h1>Francesco Ardi<span class="accent">ta</span></h1>
+      <p class="role">Data Engineer &amp; Data Analytics Expert <span class="dim">// Cloud · ETL · BI</span></p>
+      <p class="pitch">
+        Data Engineer e Data Analytics Expert con esperienza in aziende globali
+        (<span class="kw-spark">STMicroelectronics</span>, <span class="kw-spark">IBM</span>, <span class="kw-spark">Leonardo</span>).
+        Progetto pipeline ETL, modelli dati e soluzioni di analisi cloud su
+        <span class="kw">PySpark</span>, <span class="kw">Azure</span>, <span class="kw">Databricks</span>,
+        <span class="kw">Microsoft Fabric</span> e <span class="kw">Google Cloud</span>, trasformando dati complessi
+        in insight strategici. Unisco Python, SQL e Power BI a un background quantitativo in
+        <span class="kw">Finanza Aziendale</span>, portando valore dall'ingegneria dei dati alla messa in produzione.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/francesco-ardita/" target="_blank" rel="noopener">$ connect --linkedin</a>
+        <a class="btn" href="https://github.com/fardita" target="_blank" rel="noopener">github</a>
+        <a class="btn" href="assets/CV_Francesco_Ardita.pdf" target="_blank" rel="noopener">wget résumé.pdf</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <h2 class="section-title"><span class="prompt">$</span> cat skills.yaml</h2>
+    <div class="code-card yaml-card">
+      <div class="yaml-grid">
+
+        <div class="yaml-block">
+<pre><code><span class="yk">languages</span>:
+  <span class="yd">-</span> <span class="ys ys-blue">Python</span>
+  <span class="yd">-</span> <span class="ys ys-blue">SQL</span>
+  <span class="yd">-</span> <span class="ys ys-blue">PL/SQL</span>
+  <span class="yd">-</span> <span class="ys ys-blue">R</span>
+  <span class="yd">-</span> <span class="ys ys-blue">KQL</span>
+  <span class="yd">-</span> <span class="ys ys-blue">Bash</span></code></pre>
+        </div>
+
+        <div class="yaml-block">
+<pre><code><span class="yk">data_engineering</span>:
+  <span class="yd">-</span> <span class="ys ys-spark">PySpark / ETL / ELT</span>
+  <span class="yd">-</span> <span class="ys ys-spark">Databricks</span>
+  <span class="yd">-</span> <span class="ys ys-spark">Data Modeling</span>
+  <span class="yd">-</span> <span class="ys ys-spark">Data Pipelines</span>
+  <span class="yd">-</span> <span class="ys ys-spark">Data Migration</span>
+  <span class="yd">-</span> <span class="ys ys-spark">Data Validation</span></code></pre>
+        </div>
+
+        <div class="yaml-block">
+<pre><code><span class="yk">bi_analytics</span>:
+  <span class="yd">-</span> <span class="ys ys-orange">Microsoft Power BI</span>
+  <span class="yd">-</span> <span class="ys ys-orange">DAX</span>
+  <span class="yd">-</span> <span class="ys ys-orange">Microsoft Fabric</span>
+  <span class="yd">-</span> <span class="ys ys-orange">Dashboarding</span>
+  <span class="yd">-</span> <span class="ys ys-orange">Data Visualization</span></code></pre>
+        </div>
+
+        <div class="yaml-block">
+<pre><code><span class="yk">cloud_infra</span>:
+  <span class="yd">-</span> <span class="ys ys-green">Microsoft Azure</span>
+  <span class="yd">-</span> <span class="ys ys-green">Google Cloud</span>
+  <span class="yd">-</span> <span class="ys ys-green">Linux</span>
+  <span class="yd">-</span> <span class="ys ys-green">Docker</span>
+  <span class="yd">-</span> <span class="ys ys-green">Deployment &amp; Infra</span></code></pre>
+        </div>
+
+        <div class="yaml-block">
+<pre><code><span class="yk">machine_learning</span>:
+  <span class="yd">-</span> <span class="ys ys-purple">ML Models</span>
+  <span class="yd">-</span> <span class="ys ys-purple">Predictive Analytics</span>
+  <span class="yd">-</span> <span class="ys ys-purple">Statistical Modeling</span>
+  <span class="yd">-</span> <span class="ys ys-purple">LangChain</span>
+  <span class="yd">-</span> <span class="ys ys-purple">Prompt Engineering</span></code></pre>
+        </div>
+
+        <div class="yaml-block">
+<pre><code><span class="yk">management</span>:
+  <span class="yd">-</span> <span class="ys ys-blue">Project Management</span>
+  <span class="yd">-</span> <span class="ys ys-blue">Team Leadership</span>
+  <span class="yd">-</span> <span class="ys ys-blue">Agile / Scrum</span>
+  <span class="yd">-</span> <span class="ys ys-blue">Risk &amp; Change Mgmt</span></code></pre>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="code-card spark-card" style="margin-top:20px">
+<pre><code><span class="sc"># spark-job.py — bronze → silver → gold</span>
+<span class="sk">from</span> pyspark.sql <span class="sk">import</span> functions <span class="sk">as</span> <span class="sobj">F</span>
+
+df = (
+  spark.readStream
+       .table(<span class="ss">"raw.events"</span>)
+       .filter(<span class="sobj">F</span>.col(<span class="ss">"event_type"</span>) != <span class="ss">"test"</span>)
+)
+
+silver = df.withColumn(<span class="ss">"dt"</span>, <span class="sobj">F</span>.to_date(<span class="sobj">F</span>.col(<span class="ss">"ts"</span>))) \
+          .withColumn(<span class="ss">"user_id"</span>, <span class="sobj">F</span>.col(<span class="ss">"user_id"</span>).cast(<span class="sarg">"long"</span>))
+
+gold = silver.groupBy(<span class="ss">"dt"</span>, <span class="ss">"region"</span>) \
+             .agg(<span class="sobj">F</span>.sum(<span class="ss">"revenue"</span>).alias(<span class="ss">"total_revenue"</span>),
+                  <span class="sobj">F</span>.countDistinct(<span class="ss">"user_id"</span>).alias(<span class="ss">"active_users"</span>))
+
+gold.writeStream.outputMode(<span class="ss">"complete"</span>) \
+    .option(<span class="ss">"checkpointLocation"</span>, <span class="ss">"/dbfs/checkpoints"</span>) \
+    .toTable(<span class="ss">"analytics.daily_revenue"</span>)</code></pre>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <h2 class="section-title"><span class="prompt">$</span> git log --graph --stat experience</h2>
+
+    <div class="gitlog">
+
+      <article class="commit">
+        <div class="commit-rail"><span class="commit-node"></span></div>
+        <div class="commit-body">
+          <div class="commit-head">
+            <span class="commit-hash">e28d4f1</span>
+            <span class="commit-branch">HEAD -&gt; main</span>
+            <span class="commit-date">Oct 2025 — Present</span>
+          </div>
+          <h3 class="commit-title">Data Engineer @ Leonardo</h3>
+          <p class="commit-loc">Italy · Remote/Hybrid</p>
+          <p class="commit-msg">
+            Building and maintaining enterprise data pipelines and analytics infrastructure to support
+            decision-making across the organisation.
+          </p>
+          <ul class="commit-bullets">
+            <li>Progettazione e sviluppo di <strong>pipeline ETL in PySpark su Databricks</strong> e Microsoft
+              Fabric per l'integrazione e la valorizzazione dei dati aziendali.</li>
+          </ul>
+          <div class="tag-row small">
+            <span class="tag tag-diff">+PySpark</span><span class="tag tag-diff">+Python</span>
+            <span class="tag tag-diff">+Databricks</span><span class="tag tag-diff">+Fabric</span>
+            <span class="tag tag-diff">+Azure</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="commit">
+        <div class="commit-rail"><span class="commit-node"></span></div>
+        <div class="commit-body">
+          <div class="commit-head">
+            <span class="commit-hash">9f3c2a1</span>
+            <span class="commit-date">Aug 2022 — Oct 2025</span>
+          </div>
+          <h3 class="commit-title">Data Engineer / Project Manager @ STMicroelectronics</h3>
+          <p class="commit-loc">Italy · Global (Asia projects)</p>
+          <ul class="commit-bullets">
+            <li>Progettazione e sviluppo di <strong>pipeline ETL in Python su Databricks</strong>, migliorando
+              l'accuratezza dei dati e automatizzando i flussi di reporting.</li>
+            <li>Realizzazione di <strong>dashboard Power BI</strong> per KPI e decisioni aziendali
+              multi-dipartimentali.</li>
+            <li>Gestione di team interfunzionali come <strong>Work Package Leader</strong> per progetti di
+              infrastruttura cloud e data provisioning in Asia.</li>
+            <li>Supervisione di pianificazione, rischio e change control, garantendo consegne puntuali di
+              iniziative dati complesse.</li>
+            <li>Collaborazione con il senior management per allineare le strategie analitiche agli obiettivi
+              aziendali.</li>
+          </ul>
+          <div class="tag-row small">
+            <span class="tag tag-diff">+Python</span><span class="tag tag-diff">+PySpark</span>
+            <span class="tag tag-diff">+Databricks</span><span class="tag tag-diff">+Power BI</span>
+            <span class="tag tag-diff">+DAX</span><span class="tag tag-diff">+Cloud</span>
+            <span class="tag tag-diff">+Project Mgmt</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="commit">
+        <div class="commit-rail"><span class="commit-node"></span></div>
+        <div class="commit-body">
+          <div class="commit-head">
+            <span class="commit-hash">b4d81c0</span>
+            <span class="commit-date">Jul 2021 — Aug 2022</span>
+          </div>
+          <h3 class="commit-title">Data Engineer @ IBM</h3>
+          <p class="commit-loc">Italy</p>
+          <ul class="commit-bullets">
+            <li>Ottimizzazione dei processi <strong>ETL</strong> per un reporting BI accurato e tempestivo.</li>
+            <li>Sviluppo e deploy di <strong>data pipeline su Azure</strong>, migliorando accessibilità e
+              affidabilità dei dati aziendali.</li>
+            <li>Creazione di <strong>script Python</strong> per analisi esplorativa e validazione automatizzata.</li>
+            <li>Costruzione di <strong>dashboard Power BI</strong> per insight concreti agli stakeholder.</li>
+          </ul>
+          <div class="tag-row small">
+            <span class="tag tag-diff">+Python</span><span class="tag tag-diff">+ETL</span>
+            <span class="tag tag-diff">+Azure</span><span class="tag tag-diff">+Power BI</span>
+            <span class="tag tag-diff">+Data Validation</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="commit">
+        <div class="commit-rail"><span class="commit-node"></span></div>
+        <div class="commit-body">
+          <div class="commit-head">
+            <span class="commit-hash">71a0e4d</span>
+            <span class="commit-date">Gen 2021 — Lug 2021</span>
+          </div>
+          <h3 class="commit-title">Data Analyst @ Adora Ict S.r.l.</h3>
+          <p class="commit-loc">Italy</p>
+          <ul class="commit-bullets">
+            <li>Acquisizione, elaborazione e modellazione dei dati con <strong>Python, SQL e R</strong>.</li>
+            <li>Sviluppo di script di automazione <strong>PL/SQL</strong> che hanno ridotto i tempi dei task
+              da 3 giorni a 1 giorno.</li>
+            <li>Creazione di dashboard analitiche per reporting interno e programmi di revenue assurance.</li>
+          </ul>
+          <div class="tag-row small">
+            <span class="tag tag-diff">+Python</span><span class="tag tag-diff">+SQL</span>
+            <span class="tag tag-diff">+PL/SQL</span><span class="tag tag-diff">+R</span>
+            <span class="tag tag-diff">+Analytics</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="commit commit-root">
+        <div class="commit-rail"><span class="commit-node"></span></div>
+        <div class="commit-body">
+          <div class="commit-head">
+            <span class="commit-hash">0000001</span>
+            <span class="commit-branch">root-commit</span>
+            <span class="commit-date">Gen 2018 — Dic 2020</span>
+          </div>
+          <h3 class="commit-title">Credit Advisor @ Credipass</h3>
+          <p class="commit-loc">Italy</p>
+          <ul class="commit-bullets">
+            <li>Sviluppo e gestione di un portafoglio clienti tramite partnership con agenzie immobiliari.</li>
+            <li>Analisi finanziarie e di affidabilità creditizia per la valutazione di prestiti e mutui.</li>
+            <li>Predisposizione di <strong>report finanziari</strong> su liquidità e performance del rischio
+              di credito.</li>
+          </ul>
+          <div class="tag-row small">
+            <span class="tag tag-diff">+Financial Modeling</span><span class="tag tag-diff">+Credit Risk</span>
+            <span class="tag tag-diff">+Analytics</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <h2 class="section-title"><span class="prompt">$</span> ls -la ~/projects</h2>
+
+    <div class="window">
+      <div class="window-titlebar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="window-title">francesco@fardita:~/projects</span>
+      </div>
+      <div class="window-body listing-body">
+        <ul class="file-listing">
+
+          <li class="file-row">
+            <a href="https://github.com/fardita/PolynomialRegression" target="_blank" rel="noopener">
+              <span class="f-mode">drwxr-xr-x</span>
+              <span class="f-name">PolynomialRegression/</span>
+              <span class="f-arrow">→</span>
+              <span class="f-desc">Impact of COVID-19 on daily landings in Italy &amp; Greece (UNHCR) — R, polynomial regression with dummy variable.</span>
+              <span class="tag tag-spark">R · Analysis</span>
+            </a>
+          </li>
+
+          <li class="file-row">
+            <a href="https://github.com/fardita/PortfolioAnalysis" target="_blank" rel="noopener">
+              <span class="f-mode">drwxr-xr-x</span>
+              <span class="f-name">PortfolioAnalysis/</span>
+              <span class="f-arrow">→</span>
+              <span class="f-desc">Data fetching, portfolio analysis and performance — quantitative finance with Python.</span>
+              <span class="tag tag-blue">Python · Quant</span>
+            </a>
+          </li>
+
+          <li class="file-row">
+            <a href="https://github.com/fardita/RealEstateMilan" target="_blank" rel="noopener">
+              <span class="f-mode">drwxr-xr-x</span>
+              <span class="f-name">RealEstateMilan/</span>
+              <span class="f-arrow">→</span>
+              <span class="f-desc">Data exploration &amp; multiple linear regression on Milan real-estate data.</span>
+              <span class="tag tag-blue">Python · ML</span>
+            </a>
+          </li>
+
+          <li class="file-row">
+            <a href="https://github.com/fardita/cv-creator" target="_blank" rel="noopener">
+              <span class="f-mode">drwxr-xr-x</span>
+              <span class="f-name">cv-creator/</span>
+              <span class="f-arrow">→</span>
+              <span class="f-desc">Agent skill + CLI to tailor your CV to a job description: STAR bullets, keyword alignment, ATS scoring.</span>
+              <span class="tag tag-orange">Python · Agent Skill</span>
+            </a>
+          </li>
+
+          <li class="file-row">
+            <a href="https://github.com/fardita/User_Data_Manager" target="_blank" rel="noopener">
+              <span class="f-mode">drwxr-xr-x</span>
+              <span class="f-name">User_Data_Manager/</span>
+              <span class="f-arrow">→</span>
+              <span class="f-desc">Simple and user-friendly data manager built with Tkinter and Pandas.</span>
+              <span class="tag tag-blue">Python · Desktop</span>
+            </a>
+          </li>
+
+          <li class="file-row">
+            <a href="https://github.com/fardita/PolitOS" target="_blank" rel="noopener">
+              <span class="f-mode">drwxr-xr-x</span>
+              <span class="f-name">PolitOS/</span>
+              <span class="f-arrow">→</span>
+              <span class="f-desc">Political operating system — engagement, territorial campaigns &amp; analytics. Next.js + Supabase.</span>
+              <span class="tag tag-purple">Next.js · Analytics</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <h2 class="section-title"><span class="prompt">$</span> cat education.json</h2>
+    <div class="code-card json-card">
+<pre><code><span class="p">{</span>
+  <span class="k">"degrees"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="k">"degree"</span><span class="p">:</span> <span class="s">"Master's Degree in Corporate Finance"</span><span class="p">,</span>
+      <span class="k">"institution"</span><span class="p">:</span> <span class="s">"University of Catania, Italy"</span><span class="p">,</span>
+      <span class="k">"focus"</span><span class="p">:</span> <span class="s">"Financial Modeling · Econometrics · Quantitative Methods · Risk Analysis"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="k">"degree"</span><span class="p">:</span> <span class="s">"Bachelor's Degree in Business Administration"</span><span class="p">,</span>
+      <span class="k">"institution"</span><span class="p">:</span> <span class="s">"University of Catania, Italy"</span><span class="p">,</span>
+      <span class="k">"focus"</span><span class="p">:</span> <span class="s">"Economics · Accounting · Finance · Statistics"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="k">"degree"</span><span class="p">:</span> <span class="s">"Professional Course in Data Science &amp; ML"</span><span class="p">,</span>
+      <span class="k">"institution"</span><span class="p">:</span> <span class="s">"Tree School"</span><span class="p">,</span>
+      <span class="k">"focus"</span><span class="p">:</span> <span class="s">"Python · Machine Learning · Statistical Modeling · Predictive Analytics"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="k">"certifications"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Microsoft Certified: Fabric Analytics Engineer Associate"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"Microsoft"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2026"</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Power BI Data Modeling with DAX"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"LinkedIn"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2025"</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Databricks Lakehouse Fundamentals"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"Databricks"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2023"</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Python, Bash and SQL Essentials for Data Engineering"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"Coursera"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2023"</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Microsoft Azure Fundamentals (AZ-900)"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"Microsoft"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2021"</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Prompt Engineering with LangChain"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"LinkedIn"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2024"</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2 class="section-title"><span class="prompt">$</span> curl -X POST fardita.dev/contact</h2>
+    <div class="window contact-window">
+      <div class="window-titlebar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="window-title">response — 200 OK</span>
+      </div>
+      <div class="window-body">
+        <pre class="contact-json"><code><span class="p">{</span>
+  <span class="k">"status"</span><span class="p">:</span> <span class="s">"open_to_work"</span><span class="p">,</span>
+  <span class="k">"role"</span><span class="p">:</span> <span class="s">"Data Engineer · Data Analytics Expert"</span><span class="p">,</span>
+  <span class="k">"github"</span><span class="p">:</span> <span class="s">"<a href="https://github.com/fardita" target="_blank" rel="noopener">github.com/fardita</a>"</span><span class="p">,</span>
+  <span class="k">"linkedin"</span><span class="p">:</span> <span class="s">"<a href="https://www.linkedin.com/in/francesco-ardita/" target="_blank" rel="noopener">linkedin.com/in/francesco-ardita</a>"</span><span class="p">,</span>
+  <span class="k">"location"</span><span class="p">:</span> <span class="s">"Italy · remote / hybrid / onsite"</span>
+<span class="p">}</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>
+    <span class="prompt">$</span> echo "built with vanilla HTML/CSS/JS · deployed on GitHub Pages"
+  </p>
+  <p class="dim">© <span id="year"></span> Francesco Ardita. All rights reserved.</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
