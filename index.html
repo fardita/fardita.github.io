@@ -3,446 +3,453 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Francesco Ardita — Data Engineer &amp; Data Analytics Expert</title>
-<meta name="description" content="Francesco Ardita — Data Engineer & Data Analytics Expert. PySpark, Azure, Databricks, Power BI. ETL pipelines, cloud data platforms, ML & BI.">
-
-<meta property="og:title" content="Francesco Ardita — Data Engineer & Data Analytics Expert">
-<meta property="og:description" content="Building ETL pipelines, cloud data platforms and BI dashboards on PySpark, Azure, Databricks and Microsoft Fabric.">
+<title>Projects — Francesco Ardita | Data Engineer</title>
+<meta name="description" content="Professional projects by Francesco Ardita — Data Engineer specializing in ETL pipelines, cloud data platforms, BI dashboards, and AI-powered analytics.">
+<meta property="og:title" content="Projects — Francesco Ardita | Data Engineer">
+<meta property="og:description" content="Enterprise data platforms, ETL pipelines, BI dashboards, and AI-powered analytics.">
 <meta property="og:type" content="website">
-
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230d1117'/%3E%3Ctext x='50' y='68' font-size='54' font-family='monospace' fill='%23e25a1c' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d1117; --bg-raised: #12181f; --bg-card: #161b22; --bg-card-hover: #1c2230;
+  --border: #30363d; --border-soft: #21262d; --text: #c9d1d9; --text-dim: #8b949e; --text-bright: #f0f3f6;
+  --green: #3fb950; --green-bright: #56d364; --blue: #58a6ff; --indigo: #3B52FF; --indigo-glow: #5b72ff;
+  --purple: #bc8cff; --orange: #d29922; --spark: #e25a1c; --spark-bright: #ff8c42;
+  --pink: #f778ba; --cyan: #39c5cf; --red: #f85149; --yellow: #e3b341;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --radius: 8px; --radius-lg: 12px; --max-w: 960px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; } }
+a { color: inherit; text-decoration: none; }
+body::before { content: ''; position: fixed; inset: 0; z-index: -1; background-image: linear-gradient(rgba(59,82,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,82,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
+body::after { content: ''; position: fixed; inset: 0; z-index: -1; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59,82,255,0.08), transparent); }
+.topbar { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; background: rgba(13,17,23,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-soft); }
+.brand { font-family: var(--font-mono); font-weight: 700; color: var(--text-bright); font-size: 15px; }
+.brand .prompt { color: var(--green-bright); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { font-family: var(--font-mono); font-size: 13px; color: var(--text-dim); transition: color 0.2s; position: relative; }
+.nav-links a:hover, .nav-links a.active { color: var(--text-bright); }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--indigo); transition: width 0.25s ease; }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
+.menu-toggle span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+.menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.hero { padding: 80px 24px 60px; max-width: var(--max-w); margin: 0 auto; text-align: center; }
+.hero-terminal { display: inline-block; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 36px; width: 100%; max-width: 540px; text-align: left; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
+.hero-titlebar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: var(--bg-raised); border-bottom: 1px solid var(--border-soft); font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); }
+.hero-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.hero-dot.red { background: #ff5f57; } .hero-dot.yellow { background: #febc2e; } .hero-dot.green { background: #28c840; }
+.hero-titlebar span.title { margin-left: 8px; color: var(--text-dim); }
+.hero-body { padding: 20px 24px; font-family: var(--font-mono); font-size: 13px; line-height: 1.8; }
+.hero-body .prompt { color: var(--green-bright); } .hero-body .cmd { color: var(--text-bright); }
+.hero-body .output { color: var(--text-dim); } .hero-body .accent { color: var(--indigo-glow); } .hero-body .spark { color: var(--spark-bright); }
+.cursor { display: inline-block; width: 8px; height: 16px; background: var(--green-bright); margin-left: 2px; vertical-align: text-bottom; animation: blink 1s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.hero h1 { font-family: var(--font-body); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; color: var(--text-bright); margin-bottom: 8px; letter-spacing: -0.02em; }
+.hero .role { font-family: var(--font-mono); font-size: 16px; color: var(--indigo-glow); margin-bottom: 20px; }
+.hero .role .dim { color: var(--text-dim); }
+.hero .pitch { max-width: 640px; margin: 0 auto 32px; color: var(--text); font-size: 15px; line-height: 1.7; }
+.hero .pitch .kw { color: var(--cyan); font-family: var(--font-mono); font-size: 13px; }
+.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: var(--radius); font-family: var(--font-mono); font-size: 13px; font-weight: 500; border: 1px solid var(--border); background: var(--bg-card); color: var(--text); transition: all 0.2s; cursor: pointer; }
+.btn:hover { background: var(--bg-card-hover); border-color: var(--indigo); color: var(--text-bright); }
+.btn-primary { background: var(--indigo); border-color: var(--indigo); color: #fff; }
+.btn-primary:hover { background: var(--indigo-glow); border-color: var(--indigo-glow); }
+.stats-bar { display: flex; justify-content: center; gap: 48px; padding: 32px 24px; max-width: var(--max-w); margin: 0 auto; border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-num { font-family: var(--font-mono); font-size: 28px; font-weight: 700; color: var(--text-bright); display: block; }
+.stat-label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+.section { padding: 60px 24px; max-width: var(--max-w); margin: 0 auto; }
+.section-header { margin-bottom: 40px; }
+.section-header h2 { font-family: var(--font-body); font-size: 1.6rem; font-weight: 700; color: var(--text-bright); margin-bottom: 6px; }
+.section-header p { color: var(--text-dim); font-size: 14px; }
+.section-header .prompt-tag { font-family: var(--font-mono); font-size: 13px; color: var(--green-bright); margin-bottom: 8px; display: block; }
+.industry-group { margin-bottom: 48px; }
+.industry-label { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; border: 1px solid; }
+.industry-label .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+.ind-defense { color: var(--red); border-color: rgba(248,81,73,0.3); background: rgba(248,81,73,0.06); } .ind-defense .dot { background: var(--red); }
+.ind-healthcare { color: var(--green); border-color: rgba(63,185,80,0.3); background: rgba(63,185,80,0.06); } .ind-healthcare .dot { background: var(--green); }
+.ind-semiconductor { color: var(--purple); border-color: rgba(188,140,255,0.3); background: rgba(188,140,255,0.06); } .ind-semiconductor .dot { background: var(--purple); }
+.ind-telecom { color: var(--cyan); border-color: rgba(57,197,207,0.3); background: rgba(57,197,207,0.06); } .ind-telecom .dot { background: var(--cyan); }
+.ind-retail { color: var(--orange); border-color: rgba(210,153,34,0.3); background: rgba(210,153,34,0.06); } .ind-retail .dot { background: var(--orange); }
+.ind-public { color: var(--blue); border-color: rgba(88,166,255,0.3); background: rgba(88,166,255,0.06); } .ind-public .dot { background: var(--blue); }
+.ind-innovation { color: var(--spark-bright); border-color: rgba(226,90,28,0.3); background: rgba(226,90,28,0.06); } .ind-innovation .dot { background: var(--spark-bright); }
+.ind-infrastructure { color: var(--yellow); border-color: rgba(227,179,65,0.3); background: rgba(227,179,65,0.06); } .ind-infrastructure .dot { background: var(--yellow); }
+.ind-commercial { color: var(--pink); border-color: rgba(247,120,186,0.3); background: rgba(247,120,186,0.06); } .ind-commercial .dot { background: var(--pink); }
+.project-card { background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 16px; transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s; position: relative; overflow: hidden; }
+.project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--card-accent, var(--indigo)), transparent); opacity: 0; transition: opacity 0.3s; }
+.project-card:hover { border-color: var(--border); box-shadow: 0 8px 32px rgba(0,0,0,0.3); transform: translateY(-2px); }
+.project-card:hover::before { opacity: 1; }
+.project-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+.project-card h3 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 700; color: var(--text-bright); line-height: 1.3; }
+.project-card .award-badge { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 12px; background: rgba(226,90,28,0.12); color: var(--spark-bright); border: 1px solid rgba(226,90,28,0.25); white-space: nowrap; flex-shrink: 0; }
+.project-card .bullets { list-style: none; padding: 0; margin: 0 0 18px 0; }
+.project-card .bullets li { position: relative; padding-left: 18px; margin-bottom: 8px; color: var(--text); font-size: 14px; line-height: 1.6; }
+.project-card .bullets li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--indigo); }
+.project-card .bullets li strong { color: var(--text-bright); font-weight: 600; }
+.tech-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.tech-badge { display: inline-flex; align-items: center; padding: 2px; border-radius: 4px; background: transparent; }
+.tech-badge img { height: 22px; width: auto; border-radius: 3px; }
+.project-card[data-accent="red"] { --card-accent: var(--red); }
+.project-card[data-accent="green"] { --card-accent: var(--green); }
+.project-card[data-accent="purple"] { --card-accent: var(--purple); }
+.project-card[data-accent="cyan"] { --card-accent: var(--cyan); }
+.project-card[data-accent="orange"] { --card-accent: var(--orange); }
+.project-card[data-accent="blue"] { --card-accent: var(--blue); }
+.project-card[data-accent="spark"] { --card-accent: var(--spark); }
+.project-card[data-accent="yellow"] { --card-accent: var(--yellow); }
+.project-card[data-accent="pink"] { --card-accent: var(--pink); }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; padding: 12px 0; }
+.filter-btn { font-family: var(--font-mono); font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 16px; border: 1px solid var(--border); background: transparent; color: var(--text-dim); cursor: pointer; transition: all 0.2s; }
+.filter-btn:hover { border-color: var(--indigo); color: var(--text); }
+.filter-btn.active { background: var(--indigo); border-color: var(--indigo); color: #fff; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: var(--radius); font-family: var(--font-mono); font-size: 13px; color: var(--text-dim); border: 1px solid var(--border-soft); transition: all 0.2s; }
+.back-link:hover { color: var(--text-bright); border-color: var(--indigo); }
+.footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border-soft); font-family: var(--font-mono); font-size: 13px; color: var(--text-dim); }
+.footer .prompt { color: var(--green-bright); } .footer .dim { opacity: 0.5; margin-top: 8px; }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 768px) {
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(13,17,23,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-soft); flex-direction: column; padding: 16px 24px; gap: 16px; }
+  .nav-links.open { display: flex; } .menu-toggle { display: flex; }
+  .hero { padding: 48px 20px 40px; } .hero-terminal { max-width: 100%; }
+  .stats-bar { gap: 24px; padding: 24px 20px; } .stat-num { font-size: 22px; }
+  .section { padding: 40px 20px; } .project-card { padding: 20px; }
+  .project-card-head { flex-direction: column; gap: 8px; }
+}
+@media (max-width: 480px) { .stats-bar { gap: 16px; } .filter-bar { gap: 6px; } }
+</style>
 </head>
 <body>
-
-<canvas id="bg-canvas" aria-hidden="true"></canvas>
-
-<div class="scanline" aria-hidden="true"></div>
-
 <header class="topbar">
-  <a href="#top" class="brand">
-    <span class="prompt">~/</span>fardita
-  </a>
-  <nav class="tabs" aria-label="Primary">
-    <a href="#whoami"><span class="tab-dot"></span>whoami</a>
-    <a href="#skills"><span class="tab-dot"></span>skills</a>
-    <a href="#experience"><span class="tab-dot"></span>experience</a>
-    <a href="#projects"><span class="tab-dot"></span>projects</a>
-    <a href="#education"><span class="tab-dot"></span>education</a>
-    <a href="#contact"><span class="tab-dot"></span>contact</a>
+  <a href="https://fardita.github.io" class="brand"><span class="prompt">~/</span>fardita</a>
+  <nav>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">home</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="https://fardita.github.io" target="_blank" rel="noopener">full profile</a></li>
+      <li><a href="https://github.com/fardita" target="_blank" rel="noopener">github</a></li>
+    </ul>
   </nav>
-  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero" id="whoami">
-    <div class="window hero-window">
-      <div class="window-titlebar">
-        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-        <span class="window-title">python3</span>
-      </div>
-      <div class="window-body">
-        <pre class="term-lines" id="termLines" aria-live="polite"></pre>
-        <div class="neofetch-block" id="neofetchBlock">
-          <div class="neofetch-body">
-            <div class="neofetch-info">
-              <p class="nf-header">francesco<span class="dim">@</span>fardita</p>
-              <p class="nf-sep">─────────────────────</p>
-              <p class="nf-row"><span class="nf-key">Name</span>Francesco Ardita</p>
-              <p class="nf-row"><span class="nf-key">Role</span>Data Engineer &amp; Analytics</p>
-              <p class="nf-row"><span class="nf-key">Host</span>Leonardo</p>
-              <p class="nf-row"><span class="nf-key">Uptime</span>6+ years</p>
-              <p class="nf-row"><span class="nf-key">Location</span>Italy · Remote</p>
-              <p class="nf-row"><span class="nf-key">Languages</span>Python, SQL, R, Bash</p>
-              <p class="nf-row"><span class="nf-key">Stack</span>Azure, GCP, PySpark, BigQuery, K8s</p>
-              <p class="nf-row"><span class="nf-key">Cert</span>Fabric Analytics Engineer</p>
-              <div class="nf-swatches">
-                <span class="nf-swatch" style="background:var(--spark-bright)"></span>
-                <span class="nf-swatch" style="background:var(--green-bright)"></span>
-                <span class="nf-swatch" style="background:var(--blue)"></span>
-                <span class="nf-swatch" style="background:var(--purple)"></span>
-                <span class="nf-swatch" style="background:var(--orange)"></span>
-                <span class="nf-swatch" style="background:var(--cyan)"></span>
-                <span class="nf-swatch" style="background:var(--red)"></span>
-                <span class="nf-swatch" style="background:var(--yellow)"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <pre class="term-final" id="termFinal"></pre>
-      </div>
+<section class="hero" id="hero">
+  <div class="hero-terminal">
+    <div class="hero-titlebar">
+      <span class="hero-dot red"></span><span class="hero-dot yellow"></span><span class="hero-dot green"></span>
+      <span class="title">projects.py</span>
     </div>
-
-    <div class="hero-copy">
-      <h1>Francesco Ardita</h1>
-      <p class="role">Data Engineer &amp; Data Analytics Expert <span class="dim">// Cloud · ETL · BI</span></p>
-      <p class="pitch">
-        Data Engineer and Data Analytics Expert across
-        <span class="kw-spark">STMicroelectronics</span>, <span class="kw-spark">IBM</span> and <span class="kw-spark">Leonardo</span>.
-        I design and ship ETL/ELT pipelines, cloud data platforms and BI solutions on
-        <span class="kw">PySpark</span>, <span class="kw">Google Cloud (BigQuery)</span>,
-        <span class="kw">Azure (Data Factory, Fabric)</span>, <span class="kw">AWS</span> and
-        <span class="kw">Databricks</span> — owning high-level design end-to-end. I also build AI-powered
-        analytics (<span class="kw">RAG</span>, prompt engineering) and dashboards
-        (<span class="kw">Power BI</span>, <span class="kw">Superset</span>).
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/francesco-ardita/" target="_blank" rel="noopener">$ connect --linkedin</a>
-        <a class="btn" href="https://github.com/fardita" target="_blank" rel="noopener">github</a>
-        <a class="btn" href="assets/CV_Francesco_Ardita.pdf" target="_blank" rel="noopener">wget résumé.pdf</a>
-      </div>
+    <div class="hero-body">
+      <div><span class="prompt">$</span> <span class="cmd">cat ~/projects.json | jq '.selected'</span></div>
+      <div class="output">{</div>
+      <div class="output">&nbsp;&nbsp;<span class="accent">"author"</span>: <span class="spark">"Francesco Ardita"</span>,</div>
+      <div class="output">&nbsp;&nbsp;<span class="accent">"count"</span>: <span class="spark">10</span>,</div>
+      <div class="output">&nbsp;&nbsp;<span class="accent">"sectors"</span>: [</div>
+      <div class="output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="spark">"defense"</span>, <span class="spark">"healthcare"</span>,</div>
+      <div class="output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="spark">"semiconductor"</span>, <span class="spark">"telecom"</span>,</div>
+      <div class="output">&nbsp;&nbsp;&nbsp;&nbsp;<span class="spark">"retail"</span>, <span class="spark">"public"</span>, <span class="spark">"innovation"</span></div>
+      <div class="output">&nbsp;&nbsp;],</div>
+      <div class="output">&nbsp;&nbsp;<span class="accent">"filter"</span>: <span class="spark">"all"</span></div>
+      <div class="output">}<span class="cursor"></span></div>
     </div>
-  </section>
+  </div>
+  <h1>Francesco Ardita</h1>
+  <p class="role">Data Engineer &amp; Data Analytics Expert <span class="dim">// Projects Portfolio</span></p>
+  <p class="pitch">
+    Enterprise-scale data platforms, ETL pipelines and BI solutions delivered across
+    <span class="kw">defense</span>, <span class="kw">healthcare</span>,
+    <span class="kw">semiconductor</span>, <span class="kw">telecom</span>,
+    <span class="kw">retail</span>, and <span class="kw">public administration</span>.
+    Every project designed and delivered end-to-end — from data modelling through production deployment.
+  </p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="https://www.linkedin.com/in/francesco-ardita/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/fardita" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="assets/CV_Francesco_Ardita.pdf" target="_blank" rel="noopener">Download CV</a>
+    <a class="btn" href="https://fardita.github.io" target="_blank" rel="noopener">Full Profile</a>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section class="section skills" id="skills">
-    <h2 class="section-title"><span class="prompt">&gt;&gt;&gt;</span> print(open("skills.yaml").read())</h2>
-    <div class="code-card yaml-card">
-      <div class="yaml-grid">
+<div class="stats-bar">
+  <div class="stat"><span class="stat-num">10</span><span class="stat-label">Projects</span></div>
+  <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Industries</span></div>
+  <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Years Exp.</span></div>
+  <div class="stat"><span class="stat-num">1</span><span class="stat-label">Award</span></div>
+</div>
 
-        <div class="yaml-block">
-<pre><code><span class="yk">languages</span>:
-  <span class="yd">-</span> <span class="ys ys-blue">Python</span>
-  <span class="yd">-</span> <span class="ys ys-blue">SQL</span>
-  <span class="yd">-</span> <span class="ys ys-blue">PL/SQL</span>
-  <span class="yd">-</span> <span class="ys ys-blue">R</span>
-  <span class="yd">-</span> <span class="ys ys-blue">Bash</span></code></pre>
-        </div>
+<section class="section" id="projects">
+  <div class="section-header">
+    <span class="prompt-tag">&gt;&gt;&gt; os.listdir("~/projects")</span>
+    <h2>Professional Projects</h2>
+    <p>Enterprise data engineering across defense, healthcare, semiconductor, telecom, retail, and public sector.</p>
+  </div>
 
-        <div class="yaml-block">
-<pre><code><span class="yk">data_engineering</span>:
-  <span class="yd">-</span> <span class="ys ys-spark">PySpark / Python</span>
-  <span class="yd">-</span> <span class="ys ys-spark">ETL / ELT</span>
-  <span class="yd">-</span> <span class="ys ys-spark">Data Modeling</span>
-  <span class="yd">-</span> <span class="ys ys-spark">Data Pipelines</span>
-  <span class="yd">-</span> <span class="ys ys-spark">Data Migration</span>
-  <span class="yd">-</span> <span class="ys ys-spark">Data Validation</span></code></pre>
-        </div>
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="defense">Defense</button>
+    <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+    <button class="filter-btn" data-filter="semiconductor">Semiconductor</button>
+    <button class="filter-btn" data-filter="telecom">Telecom</button>
+    <button class="filter-btn" data-filter="retail">Retail</button>
+    <button class="filter-btn" data-filter="public">Public Admin</button>
+    <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+    <button class="filter-btn" data-filter="innovation">Innovation</button>
+    <button class="filter-btn" data-filter="commercial">Commercial</button>
+  </div>
 
-        <div class="yaml-block">
-<pre><code><span class="yk">bi_analytics</span>:
-  <span class="yd">-</span> <span class="ys ys-orange">Microsoft Power BI</span>
-  <span class="yd">-</span> <span class="ys ys-orange">DAX</span>
-  <span class="yd">-</span> <span class="ys ys-orange">Apache Superset</span>
-  <span class="yd">-</span> <span class="ys ys-orange">Microsoft Fabric</span>
-  <span class="yd">-</span> <span class="ys ys-orange">Data Visualization</span></code></pre>
-        </div>
-
-        <div class="yaml-block">
-<pre><code><span class="yk">cloud_infra</span>:
-  <span class="yd">-</span> <span class="ys ys-green">Microsoft Azure</span>
-  <span class="yd">-</span> <span class="ys ys-green">Google Cloud (BigQuery)</span>
-  <span class="yd">-</span> <span class="ys ys-green">AWS</span>
-  <span class="yd">-</span> <span class="ys ys-green">Docker / Kubernetes</span>
-  <span class="yd">-</span> <span class="ys ys-green">Infrastructure Deploy</span></code></pre>
-        </div>
-
-        <div class="yaml-block">
-<pre><code><span class="yk">ai_ml</span>:
-  <span class="yd">-</span> <span class="ys ys-purple">RAG / LLMs</span>
-  <span class="yd">-</span> <span class="ys ys-purple">Prompt Engineering</span>
-  <span class="yd">-</span> <span class="ys ys-purple">LangChain</span>
-  <span class="yd">-</span> <span class="ys ys-purple">ML Models</span>
-  <span class="yd">-</span> <span class="ys ys-purple">Predictive Analytics</span></code></pre>
-        </div>
-
-        <div class="yaml-block">
-<pre><code><span class="yk">devops_management</span>:
-  <span class="yd">-</span> <span class="ys ys-blue">GitHub / Git</span>
-  <span class="yd">-</span> <span class="ys ys-blue">Azure DevOps</span>
-  <span class="yd">-</span> <span class="ys ys-blue">Azure Data Factory</span>
-  <span class="yd">-</span> <span class="ys ys-blue">Project Management</span>
-  <span class="yd">-</span> <span class="ys ys-blue">Agile / Scrum</span></code></pre>
-        </div>
-
+  <div class="industry-group" data-industry="infrastructure">
+    <div class="industry-label ind-infrastructure"><span class="dot"></span> National Infrastructure</div>
+    <div class="project-card reveal" data-accent="yellow" data-tags="infrastructure">
+      <div class="project-card-head"><h3>National Strategic Infrastructure — ERP-to-Cloud Data Platform</h3></div>
+      <ul class="bullets">
+        <li>Led architecture and delivery of a <strong>large-scale ERP-to-cloud data warehouse migration</strong> for a national strategic-infrastructure client</li>
+        <li>Designed a <strong>3-layer data platform</strong> with pipeline orchestration, delta processing and Type-1 SCD merge logic</li>
+        <li>Delivered complex analytical SQL reports, validated in formal UAT and adopted for <strong>executive reporting</strong></li>
+      </ul>
+      <div class="tech-badges">
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square" alt="SQL"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Azure-0089D6?style=flat-square&amp;logo=microsoftazure&amp;logoColor=white" alt="Azure"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-ETL-FF6F00?style=flat-square" alt="ETL"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Data+Warehousing-2196F3?style=flat-square" alt="Data Warehousing"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-SCD-9C27B0?style=flat-square" alt="SCD"></span>
       </div>
     </div>
+  </div>
 
-    <div class="code-card spark-card" style="margin-top:20px">
-<pre><code><span class="sc"># pipeline.py — bronze → silver → gold (pandas)</span>
-<span class="sk">import</span> pandas <span class="sk">as</span> <span class="sobj">pd</span>
-
-df = <span class="sobj">pd</span>.read_csv(<span class="ss">"raw/events.csv"</span>)
-
-silver = df[df[<span class="ss">"event_type"</span>] != <span class="ss">"test"</span>]
-silver[<span class="ss">"dt"</span>] = <span class="sobj">pd</span>.to_datetime(silver[<span class="ss">"ts"</span>]).dt.date
-silver[<span class="ss">"user_id"</span>] = silver[<span class="ss">"user_id"</span>].astype(<span class="sarg">"int64"</span>)
-
-gold = (silver
-        .groupby([<span class="ss">"dt"</span>, <span class="ss">"region"</span>], as_index=<span class="sobj">False</span>)
-        .agg(total_revenue=(<span class="ss">"revenue"</span>, <span class="ss">"sum"</span>),
-             active_users=(<span class="ss">"user_id"</span>, <span class="ss">"nunique"</span>)))
-
-gold.to_parquet(<span class="ss">"analytics/daily_revenue.parquet"</span>)</code></pre>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="section experience" id="experience">
-    <h2 class="section-title"><span class="prompt">&gt;&gt;&gt;</span> subprocess.run(["git", "log", "--graph", "--stat"], check=True)</h2>
-
-    <div class="gitlog">
-
-      <article class="commit">
-        <div class="commit-rail"><span class="commit-node"></span></div>
-        <div class="commit-body">
-          <div class="commit-head">
-            <span class="commit-hash">e28d4f1</span>
-            <span class="commit-branch">HEAD -&gt; main</span>
-            <span class="commit-date">Oct 2025 — Present</span>
-          </div>
-          <h3 class="commit-title">Data Engineer @ Leonardo</h3>
-          <p class="commit-loc">Italy · Remote/Hybrid</p>
-          <p class="commit-msg">
-            Lead and develop enterprise data pipelines and analytics infrastructure, owning high-level design
-            from data modelling through to production deployment.
-          </p>
-          <ul class="commit-bullets">
-            <li>Lead and develop <strong>ETL/ELT pipelines in Python/PySpark</strong> on Azure Data Factory,
-              Databricks and Microsoft Fabric, owning high-level design from data modelling to deployment.</li>
-            <li>Migrated large datasets to <strong>Google Cloud BigQuery</strong>, cutting infrastructure costs
-              and improving query performance by <strong>~40%</strong>.</li>
-            <li>Automated data validation and reconciliation, reducing manual QA effort and lifting data
-              accuracy to near <strong>100%</strong>.</li>
-            <li>Built <strong>Power BI and Apache Superset dashboards</strong> surfacing KPIs to leadership,
-              enabling faster decision-making.</li>
-            <li>Act as <strong>technical lead</strong> for the team while developing core components end-to-end.</li>
-          </ul>
-          <div class="tag-row small">
-            <span class="tag tag-diff">+PySpark</span><span class="tag tag-diff">+Python</span>
-            <span class="tag tag-diff">+Azure Data Factory</span><span class="tag tag-diff">+BigQuery</span>
-            <span class="tag tag-diff">+Power BI</span><span class="tag tag-diff">+Superset</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="commit">
-        <div class="commit-rail"><span class="commit-node"></span></div>
-        <div class="commit-body">
-          <div class="commit-head">
-            <span class="commit-hash">9f3c2a1</span>
-            <span class="commit-date">Aug 2022 — Oct 2025</span>
-          </div>
-          <h3 class="commit-title">Data Engineer / Project Manager @ STMicroelectronics</h3>
-          <p class="commit-loc">Italy · Global (Asia projects)</p>
-          <ul class="commit-bullets">
-            <li>Designed and built <strong>ETL pipelines in Python on Databricks</strong>, improving data
-              accuracy and automating reporting flows.</li>
-            <li>Delivered <strong>Power BI dashboards</strong> for KPIs and multi-departmental business
-              decisions.</li>
-            <li>Led cross-functional teams as <strong>Work Package Leader</strong> for cloud infrastructure
-              and data provisioning projects in Asia.</li>
-            <li>Oversaw project planning, risk and change control, ensuring on-time delivery of complex data
-              initiatives.</li>
-            <li>Partnered with senior management to align analytics strategy with business goals.</li>
-          </ul>
-          <div class="tag-row small">
-            <span class="tag tag-diff">+Python</span><span class="tag tag-diff">+PySpark</span>
-            <span class="tag tag-diff">+Databricks</span><span class="tag tag-diff">+Power BI</span>
-            <span class="tag tag-diff">+DAX</span><span class="tag tag-diff">+Cloud</span>
-            <span class="tag tag-diff">+Project Mgmt</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="commit">
-        <div class="commit-rail"><span class="commit-node"></span></div>
-        <div class="commit-body">
-          <div class="commit-head">
-            <span class="commit-hash">b4d81c0</span>
-            <span class="commit-date">Jul 2021 — Aug 2022</span>
-          </div>
-          <h3 class="commit-title">Data Engineer @ IBM</h3>
-          <p class="commit-loc">Italy</p>
-          <ul class="commit-bullets">
-            <li>Optimised <strong>ETL processes</strong>, cutting reporting turnaround by <strong>~25%</strong>
-              and improving BI accuracy for stakeholders.</li>
-            <li>Developed and deployed <strong>data pipelines on Azure</strong>, improving data accessibility
-              and reliability for business units.</li>
-            <li>Built <strong>Python scripts</strong> for automated data validation, reducing manual QA effort
-              by <strong>~30%</strong>.</li>
-            <li>Created <strong>Power BI dashboards</strong> that translated raw data into actionable insight
-              for stakeholders.</li>
-          </ul>
-          <div class="tag-row small">
-            <span class="tag tag-diff">+Python</span><span class="tag tag-diff">+ETL</span>
-            <span class="tag tag-diff">+Azure</span><span class="tag tag-diff">+Power BI</span>
-            <span class="tag tag-diff">+Data Validation</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="commit">
-        <div class="commit-rail"><span class="commit-node"></span></div>
-        <div class="commit-body">
-          <div class="commit-head">
-            <span class="commit-hash">71a0e4d</span>
-            <span class="commit-date">Jan 2021 — Jul 2021</span>
-          </div>
-          <h3 class="commit-title">Data Analyst @ Adora Ict S.r.l.</h3>
-          <p class="commit-loc">Italy</p>
-          <ul class="commit-bullets">
-            <li>Acquired, processed and modelled data with <strong>Python, SQL and R</strong>, supporting
-              internal reporting and revenue assurance.</li>
-            <li>Built <strong>PL/SQL</strong> automation scripts that cut task completion time from 3 days to
-              1 day (<strong>3x faster</strong>), raising operational efficiency.</li>
-            <li>Created analytical dashboards that gave the team clear visibility into revenue assurance
-              programs.</li>
-          </ul>
-          <div class="tag-row small">
-            <span class="tag tag-diff">+Python</span><span class="tag tag-diff">+SQL</span>
-            <span class="tag tag-diff">+PL/SQL</span><span class="tag tag-diff">+R</span>
-            <span class="tag tag-diff">+Analytics</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="commit commit-root">
-        <div class="commit-rail"><span class="commit-node"></span></div>
-        <div class="commit-body">
-          <div class="commit-head">
-            <span class="commit-hash">0000001</span>
-            <span class="commit-branch">root-commit</span>
-            <span class="commit-date">Jan 2018 — Dec 2020</span>
-          </div>
-          <h3 class="commit-title">Credit Advisor @ Credipass</h3>
-          <p class="commit-loc">Italy</p>
-          <ul class="commit-bullets">
-            <li>Developed and managed a client portfolio through real-estate agency partnerships, growing
-              lending and insurance revenue by <strong>~15%</strong> year-on-year.</li>
-            <li>Performed financial and credit-worthiness analysis for loan and mortgage eligibility,
-              optimising liquidity and reducing credit-risk exposure.</li>
-            <li>Prepared <strong>financial reports</strong> on liquidity and credit-risk performance that
-              informed lending decisions.</li>
-          </ul>
-          <div class="tag-row small">
-            <span class="tag tag-diff">+Financial Modeling</span><span class="tag tag-diff">+Credit Risk</span>
-            <span class="tag tag-diff">+Analytics</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="section projects" id="projects">
-    <h2 class="section-title"><span class="prompt">&gt;&gt;&gt;</span> os.listdir("~/projects")</h2>
-
-    <div class="window">
-      <div class="window-titlebar">
-        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-        <span class="window-title">francesco@fardita:~/projects</span>
+  <div class="industry-group" data-industry="innovation">
+    <div class="industry-label ind-innovation"><span class="dot"></span> Innovation</div>
+    <div class="project-card reveal" data-accent="spark" data-tags="innovation">
+      <div class="project-card-head">
+        <h3>Generative BI Concept</h3>
+        <span class="award-badge">🏆 Internal Innovation Award 2026</span>
       </div>
-      <div class="window-body listing-body">
-        <ul class="file-listing">
-
-          <li class="file-row">
-            <a href="https://github.com/fardita/PolynomialRegression" target="_blank" rel="noopener">
-              <span class="f-mode">drwxr-xr-x</span>
-              <span class="f-name">PolynomialRegression/</span>
-              <span class="f-arrow">→</span>
-              <span class="f-desc">Impact of COVID-19 on daily landings in Italy &amp; Greece (UNHCR) — R, polynomial regression with dummy variable.</span>
-              <span class="tag tag-spark">R · Analysis</span>
-            </a>
-          </li>
-
-          <li class="file-row">
-            <a href="https://github.com/fardita/PortfolioAnalysis" target="_blank" rel="noopener">
-              <span class="f-mode">drwxr-xr-x</span>
-              <span class="f-name">PortfolioAnalysis/</span>
-              <span class="f-arrow">→</span>
-              <span class="f-desc">Data fetching, portfolio analysis and performance — quantitative finance with Python.</span>
-              <span class="tag tag-blue">Python · Quant</span>
-            </a>
-          </li>
-
-          <li class="file-row">
-            <a href="https://github.com/fardita/RealEstateMilan" target="_blank" rel="noopener">
-              <span class="f-mode">drwxr-xr-x</span>
-              <span class="f-name">RealEstateMilan/</span>
-              <span class="f-arrow">→</span>
-              <span class="f-desc">Data exploration &amp; multiple linear regression on Milan real-estate data.</span>
-              <span class="tag tag-blue">Python · ML</span>
-            </a>
-          </li>
-
-        </ul>
+      <ul class="bullets">
+        <li>Designed a <strong>generative BI platform concept</strong> converting natural-language requests into live analytics dashboards</li>
+        <li>Built the architecture around a <strong>multi-agent system</strong> on an open-source AI stack</li>
+      </ul>
+      <div class="tech-badges">
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-LLM-7C3AED?style=flat-square" alt="LLM"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-LangChain-1C3C3C?style=flat-square&amp;logo=langchain&amp;logoColor=white" alt="LangChain"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Multi--Agent-FF6F00?style=flat-square" alt="Multi-Agent"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Open+Source-3FB950?style=flat-square" alt="Open Source"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Power+BI-F2C811?style=flat-square&amp;logo=powerbi&amp;logoColor=black" alt="Power BI"></span>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- EDUCATION -->
-  <section class="section education" id="education">
-    <h2 class="section-title"><span class="prompt">&gt;&gt;&gt;</span> json.load(open("education.json"))</h2>
-    <div class="code-card json-card">
-<pre><code><span class="p">{</span>
-  <span class="k">"degrees"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="k">"degree"</span><span class="p">:</span> <span class="s">"Master's Degree in Corporate Finance"</span><span class="p">,</span>
-      <span class="k">"institution"</span><span class="p">:</span> <span class="s">"University of Catania, Italy"</span><span class="p">,</span>
-      <span class="k">"focus"</span><span class="p">:</span> <span class="s">"Financial Modeling · Econometrics · Quantitative Methods · Risk Analysis"</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="k">"degree"</span><span class="p">:</span> <span class="s">"Bachelor's Degree in Business Administration"</span><span class="p">,</span>
-      <span class="k">"institution"</span><span class="p">:</span> <span class="s">"University of Catania, Italy"</span><span class="p">,</span>
-      <span class="k">"focus"</span><span class="p">:</span> <span class="s">"Economics · Accounting · Finance · Statistics"</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="k">"degree"</span><span class="p">:</span> <span class="s">"Professional Course in Data Science &amp; ML"</span><span class="p">,</span>
-      <span class="k">"institution"</span><span class="p">:</span> <span class="s">"Tree School"</span><span class="p">,</span>
-      <span class="k">"focus"</span><span class="p">:</span> <span class="s">"Python · Machine Learning · Statistical Modeling · Predictive Analytics"</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="k">"certifications"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Microsoft Certified: Fabric Analytics Engineer Associate"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"Microsoft"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2026"</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Power BI Data Modeling with DAX"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"LinkedIn"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2025"</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Databricks Lakehouse Fundamentals"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"Databricks"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2023"</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Python, Bash and SQL Essentials for Data Engineering"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"Coursera"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2023"</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Microsoft Azure Fundamentals (AZ-900)"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"Microsoft"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2021"</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="k">"cert"</span><span class="p">:</span> <span class="s">"Prompt Engineering with LangChain"</span><span class="p">,</span> <span class="k">"issuer"</span><span class="p">:</span> <span class="s">"LinkedIn"</span><span class="p">,</span> <span class="k">"year"</span><span class="p">:</span> <span class="s">"2024"</span> <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section contact" id="contact">
-    <h2 class="section-title"><span class="prompt">&gt;&gt;&gt;</span> requests.post("https://fardita.dev/contact").json()</h2>
-    <div class="window contact-window">
-      <div class="window-titlebar">
-        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-        <span class="window-title">response — 200 OK</span>
-      </div>
-      <div class="window-body">
-        <pre class="contact-json"><code><span class="p">{</span>
-  <span class="k">"role"</span><span class="p">:</span> <span class="s">"Data Engineer · Data Analytics Expert"</span><span class="p">,</span>
-  <span class="k">"github"</span><span class="p">:</span> <span class="s">"<a href="https://github.com/fardita" target="_blank" rel="noopener">github.com/fardita</a>"</span><span class="p">,</span>
-  <span class="k">"linkedin"</span><span class="p">:</span> <span class="s">"<a href="https://www.linkedin.com/in/francesco-ardita/" target="_blank" rel="noopener">linkedin.com/in/francesco-ardita</a>"</span><span class="p">,</span>
-  <span class="k">"location"</span><span class="p">:</span> <span class="s">"Italy · remote / hybrid"</span>
-<span class="p">}</span></code></pre>
+  <div class="industry-group" data-industry="commercial">
+    <div class="industry-label ind-commercial"><span class="dot"></span> Commercial Analytics</div>
+    <div class="project-card reveal" data-accent="pink" data-tags="commercial">
+      <div class="project-card-head"><h3>Commercial KPI Reporting — Power BI / DAX</h3></div>
+      <ul class="bullets">
+        <li>Built <strong>advanced DAX measures</strong> for commercial-initiative KPI tracking</li>
+        <li>Implemented <strong>dynamic date-filtering logic</strong> and forecast/margin measures integrated with enterprise performance-management data</li>
+      </ul>
+      <div class="tech-badges">
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Power+BI-F2C811?style=flat-square&amp;logo=powerbi&amp;logoColor=black" alt="Power BI"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-DAX-ED7D31?style=flat-square" alt="DAX"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square" alt="SQL"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-KPI+Tracking-2196F3?style=flat-square" alt="KPI Tracking"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Forecasting-9C27B0?style=flat-square" alt="Forecasting"></span>
       </div>
     </div>
-  </section>
+  </div>
 
-</main>
+  <div class="industry-group" data-industry="healthcare">
+    <div class="industry-label ind-healthcare"><span class="dot"></span> Healthcare</div>
+    <div class="project-card reveal" data-accent="green" data-tags="healthcare">
+      <div class="project-card-head"><h3>Public Healthcare Sector — Enterprise BI Platform</h3></div>
+      <ul class="bullets">
+        <li>Deployed a <strong>production-grade open-source BI stack</strong> for a public-sector healthcare client</li>
+        <li>Resolved critical <strong>infrastructure and security issues</strong> blocking go-live</li>
+        <li>Implemented consistent, <strong>brand-aligned dashboard theming</strong> across the platform</li>
+      </ul>
+      <div class="tech-badges">
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Apache+Superset-E01C24?style=flat-square&amp;logo=apache&amp;logoColor=white" alt="Superset"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Docker-2496ED?style=flat-square&amp;logo=docker&amp;logoColor=white" alt="Docker"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Open+Source-3FB950?style=flat-square" alt="Open Source"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Security-FF4500?style=flat-square" alt="Security"></span>
+      </div>
+    </div>
+    <div class="project-card reveal" data-accent="blue" data-tags="healthcare">
+      <div class="project-card-head"><h3>Public Administration — Healthcare Claims Analytics</h3></div>
+      <ul class="bullets">
+        <li>Delivered a <strong>visual-analytics dashboard</strong> for regional healthcare-claims management</li>
+        <li>Migrated data to a <strong>cloud platform</strong> to enable clear, drill-down risk reporting on claims</li>
+      </ul>
+      <div class="tech-badges">
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Power+BI-F2C811?style=flat-square&amp;logo=powerbi&amp;logoColor=black" alt="Power BI"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Cloud-0089D6?style=flat-square" alt="Cloud"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square" alt="SQL"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Data+Migration-FF6F00?style=flat-square" alt="Data Migration"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Risk+Analytics-2196F3?style=flat-square" alt="Risk Analytics"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="industry-group" data-industry="defense">
+    <div class="industry-label ind-defense"><span class="dot"></span> Defense &amp; Security</div>
+    <div class="project-card reveal" data-accent="red" data-tags="defense">
+      <div class="project-card-head"><h3>Defense Sector — Air Command &amp; Control Data Platform</h3></div>
+      <ul class="bullets">
+        <li>Contributed technical content to a defense-sector proposal for an <strong>Air C2 data platform</strong></li>
+        <li>Covered <strong>hybrid cloud/on-premises architecture</strong>, Zero Trust and classified-data handling requirements</li>
+      </ul>
+      <div class="tech-badges">
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Hybrid+Cloud-FF4500?style=flat-square" alt="Hybrid Cloud"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Zero+Trust-E53935?style=flat-square" alt="Zero Trust"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Azure-0089D6?style=flat-square&amp;logo=microsoftazure&amp;logoColor=white" alt="Azure"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Security-FF4500?style=flat-square" alt="Security"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Architecture-9C27B0?style=flat-square" alt="Architecture"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="industry-group" data-industry="semiconductor">
+    <div class="industry-label ind-semiconductor"><span class="dot"></span> Semiconductor</div>
+    <div class="project-card reveal" data-accent="purple" data-tags="semiconductor">
+      <div class="project-card-head"><h3>Semiconductor Industry (Europe) — Predictive Anomaly Detection</h3></div>
+      <ul class="bullets">
+        <li>Built <strong>ETL pipelines</strong> extracting equipment and sensor time-series data into a curated analytics layer</li>
+        <li>Enabled <strong>anomaly-detection models</strong> that improved production monitoring</li>
+      </ul>
+      <div class="tech-badges">
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-PySpark-4285F4?style=flat-square&amp;logo=apachespark&amp;logoColor=white" alt="PySpark"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Databricks-FF3621?style=flat-square&amp;logo=databricks&amp;logoColor=white" alt="Databricks"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Time+Series-9C27B0?style=flat-square" alt="Time Series"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Anomaly+Detection-E91E63?style=flat-square" alt="Anomaly Detection"></span>
+      </div>
+    </div>
+    <div class="project-card reveal" data-accent="purple" data-tags="semiconductor">
+      <div class="project-card-head"><h3>Semiconductor Industry (Asia) — Non-Conformance Analytics Platform</h3></div>
+      <ul class="bullets">
+        <li>Acted as <strong>Work Package Lead</strong>, owning cloud data flow end to end</li>
+        <li>Oversaw delivery of <strong>ML-based anomaly detection models</strong> on production machine data</li>
+      </ul>
+      <div class="tech-badges">
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-PySpark-4285F4?style=flat-square&amp;logo=apachespark&amp;logoColor=white" alt="PySpark"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Databricks-FF3621?style=flat-square&amp;logo=databricks&amp;logoColor=white" alt="Databricks"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-ML-2196F3?style=flat-square" alt="Machine Learning"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Cloud-0089D6?style=flat-square" alt="Cloud"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Leadership-FF9800?style=flat-square" alt="Leadership"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="industry-group" data-industry="telecom">
+    <div class="industry-label ind-telecom"><span class="dot"></span> Telecom</div>
+    <div class="project-card reveal" data-accent="cyan" data-tags="telecom">
+      <div class="project-card-head"><h3>Telecom Industry — Revenue Assurance</h3></div>
+      <ul class="bullets">
+        <li>Consolidated <strong>multi-platform client data</strong> into centralized databases</li>
+        <li>Delivered custom reporting that helped the client avoid <strong>€60,000 in revenue leakage</strong> by identifying data discrepancies</li>
+      </ul>
+      <div class="tech-badges">
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square" alt="SQL"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-PL%2FSQL-4479A1?style=flat-square" alt="PL/SQL"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Data+Consolidation-2196F3?style=flat-square" alt="Data Consolidation"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Revenue+Assurance-4CAF50?style=flat-square" alt="Revenue Assurance"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Power+BI-F2C811?style=flat-square&amp;logo=powerbi&amp;logoColor=black" alt="Power BI"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="industry-group" data-industry="retail">
+    <div class="industry-label ind-retail"><span class="dot"></span> Retail &amp; E-Commerce</div>
+    <div class="project-card reveal" data-accent="orange" data-tags="retail">
+      <div class="project-card-head"><h3>Retail Industry (Europe) — Digital Factory</h3></div>
+      <ul class="bullets">
+        <li>Built a <strong>cloud ETL pipeline</strong> ingesting social-media data into a data warehouse</li>
+        <li>Delivered <strong>BI dashboards</strong> for digital marketing and e-commerce performance tracking</li>
+      </ul>
+      <div class="tech-badges">
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Cloud+ETL-0089D6?style=flat-square" alt="Cloud ETL"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Power+BI-F2C811?style=flat-square&amp;logo=powerbi&amp;logoColor=black" alt="Power BI"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Social+Media+ETL-1DA1F2?style=flat-square" alt="Social Media ETL"></span>
+        <span class="tech-badge"><img src="https://img.shields.io/badge/-Data+Warehouse-2196F3?style=flat-square" alt="Data Warehouse"></span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 48px;">
+    <a class="back-link" href="https://fardita.github.io" target="_blank" rel="noopener">&#8592; Back to GitHub Profile</a>
+  </div>
+</section>
 
 <footer class="footer">
-  <p>
-    <span class="prompt">&gt;&gt;&gt;</span> print("built with vanilla HTML/CSS/JS · deployed on GitHub Pages")
-  </p>
-  <p class="dim">© <span id="year"></span> Francesco Ardita. All rights reserved.</p>
+  <p><span class="prompt">&gt;&gt;&gt;</span> print("built with vanilla HTML/CSS/JS · deployed on GitHub Pages")</p>
+  <p class="dim">&copy; <span id="year"></span> Francesco Ardita. All rights reserved.</p>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script>
+document.getElementById('menuToggle').addEventListener('click', function() {
+  this.classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('menuToggle').classList.remove('open');
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+var filterBar = document.getElementById('filterBar');
+if (filterBar) {
+  filterBar.addEventListener('click', function(e) {
+    var btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    var filter = btn.getAttribute('data-filter');
+    filterBar.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.industry-group').forEach(function(group) {
+      group.style.display = (filter === 'all' || group.getAttribute('data-industry') === filter) ? '' : 'none';
+    });
+    document.querySelectorAll('.project-card[data-tags]').forEach(function(card) {
+      var tags = (card.getAttribute('data-tags') || '').split(',');
+      card.style.display = (filter === 'all' || tags.indexOf(filter) !== -1) ? '' : 'none';
+    });
+  });
+}
+if ('IntersectionObserver' in window) {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+} else {
+  document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+}
+var sections = document.querySelectorAll('section[id]');
+var navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', function() {
+  var scrollY = window.scrollY + 80;
+  sections.forEach(function(section) {
+    if (scrollY >= section.offsetTop && scrollY < section.offsetTop + section.offsetHeight) {
+      navLinks.forEach(function(a) {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + section.getAttribute('id')) a.classList.add('active');
+      });
+    }
+  });
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
